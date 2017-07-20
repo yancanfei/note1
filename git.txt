@@ -79,7 +79,7 @@ git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况
 用git log --graph命令可以看到分支合并图。
 
 
-
+newnew
 
 
 
