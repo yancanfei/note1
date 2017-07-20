@@ -1,0 +1,94 @@
+如果你碰巧用Debian或Ubuntu Linux，通过一条sudo apt-get install git就可以直接完成Git的安装
+如果是其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。
+
+在开始菜单里找到“Git”->“Git Bash”
+bash->Bourne-Again Shell
+
+仓库repository
+
+pwd命令用于显示当前目录。
+
+只知道文本文件的改动 图片，word一类二进制文件 可知改大小  但具体内容不知
+
+使用windows 要用 notepad++ 代替记事本，默认编码设置为UTF-8 without BOM，由于原来的是 文件开头被加了0xefbbbf，会出问题。
+安装完git 后 
+使用
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+来自报家门
+
+ls -ah 显示隐藏文件
+建个文件夹 git init 把它变为 git 版本库
+
+建库之后 把写好的文件.txt 添加到仓库 git add nn.txt  Unix的哲学是“没有消息就是好消息”哈哈
+可以add很多文件 $ git add file2.txt file3.txt
+git status命令可以让我们时刻掌握仓库当前的状态
+git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式
+$ git log --pretty=oneline 查看历史版本
+git reset --hard HEAD^  一个^是一个版本 如果多了 可以用 HEAD~100 
+
+Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向以前版本，
+然后顺便把工作区的文件更新了。所以你让HEAD指向哪个版本号，你就把当前版本定位在哪
+
+$ git reset --hard 3628164 回到最新版本 用它的id 窗口不关闭的话
+git reflog用来记录你的每一次命令
+现在总结一下：
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+
+
+提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别
+
+每次修改，如果不add到暂存区，那就不会加入到commit中。
+
+用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage）
+
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
+
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
+
+git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令
+
+用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage）
+
+git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。
+
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+例如：
+git remote add origin git@github.com:yancanfei/repo1.git
+
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。
+
+Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
+
+git merge 分支名 （合并到当前分支）
+git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况
+
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+用git log --graph命令可以看到分支合并图。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
