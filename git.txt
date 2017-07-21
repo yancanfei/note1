@@ -25,6 +25,7 @@ ls -ah 显示隐藏文件
 git status命令可以让我们时刻掌握仓库当前的状态
 git diff顾名思义就是查看difference，显示的格式正是Unix通用的diff格式
 $ git log --pretty=oneline 查看历史版本
+git log -p -2  用来显示最近两次提交的内容差异
 git reset --hard HEAD^  一个^是一个版本 如果多了 可以用 HEAD~100 
 
 Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向以前版本，
