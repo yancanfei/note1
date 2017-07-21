@@ -30,7 +30,7 @@ git reset --hard HEAD^  一个^是一个版本 如果多了 可以用 HEAD~100
 Git在内部有个指向当前版本的HEAD指针，当你回退版本的时候，Git仅仅是把HEAD从指向以前版本，
 然后顺便把工作区的文件更新了。所以你让HEAD指向哪个版本号，你就把当前版本定位在哪
 
-$ git reset --hard 3628164 回到最新版本 用它的id 窗口不关闭的话
+$ git reset --hard 3628164 回到最新版本 用它的id 
 git reflog用来记录你的每一次命令
 现在总结一下：
 
@@ -44,6 +44,10 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git r
 提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别
 
 每次修改，如果不add到暂存区，那就不会加入到commit中。
+
+git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
 
 用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage）
 
