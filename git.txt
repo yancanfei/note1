@@ -66,7 +66,7 @@ git resetÃüÁî¼È¿ÉÒÔ»ØÍË°æ±¾£¬Ò²¿ÉÒÔ°ÑÔİ´æÇøµÄĞŞ¸Ä»ØÍËµ½¹¤×÷Çø¡£µ±ÎÒÃÇÓÃHEADÊ±£¬±
 
 Òª¹ØÁªÒ»¸öÔ¶³Ì¿â£¬Ê¹ÓÃÃüÁîgit remote add origin git@server-name:path/repo-name.git£»
 ÀıÈç£º
-git remote add origin git@github.com:yancanfei/repo1.git
+git remote add origin git@github.com:yancanfei/note1.git
 
 ¹ØÁªºó£¬Ê¹ÓÃÃüÁîgit push -u origin masterµÚÒ»´ÎÍÆËÍmaster·ÖÖ§µÄËùÓĞÄÚÈİ£»
 
@@ -83,7 +83,6 @@ git log --graph --pretty=oneline --abbrev-commit ²é¿´·ÖÖ§ºÏ²¢Çé¿ö
 ÓÃgit log --graphÃüÁî¿ÉÒÔ¿´µ½·ÖÖ§ºÏ²¢Í¼¡£
 
 
-newnew
 
 
 
